@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" href="./css/start.css">
+		<link rel="stylesheet" href="./css/questions.css">
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/resize.js"></script>
+		<script src="./js/NativeShare.js"></script>
+	</head>
+	<body style="background-image: url(img/wenda/bg1.png);">
+		<div id="app">
+
+			<img class="back" src="img/youjiantouW@2x.png" onclick="window.history.go(-1)">
+			<div class="people clearfix">
+				<img src="img/wenda/head.png" class="fl">
+				<div class="fl center">
+					<div class="name">小萝卜头</div>
+					<div class="df">{{count}}</div>
+				</div>
+				<div class="fr right">
+					<div class="dt">正在答题 </div>
+					<div class="dtt"> {{number+1}}/10</div>
+				</div>
+			</div>
+			<div class="timu">
+				<div class="box">
+					<div class="bg1"></div>
+					<div class="bg2"></div>
+					<div class="pr1"></div>
+					<div class="pr2"></div>
+					<div class="num"><span id="num">{{time}}</span>s</div>
+				</div>
+				<div v-for="(items,i) in questions" v-if="i==number">
+					<div class="questions">{{items.q}}</div>
+					<div class="answers" v-for="(item,j) in items.a">
+						<button @click="qa($event)" :data-type="j+1" >{{item}}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data: {
+				number:0,
+				count:0,
+				time:16,
+				questions: [{
+					q: '伪造机动车登记证书的， 以下说法 正确的是',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 2
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是1',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 2
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是2',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}, {
+					q: '伪造机动车登记证书的， 以下说法 正确的是3',
+					a: ['扣留该机动车', '选项全对', '15日以下拘留', '收缴伪造证书'],
+					r: 3
+				}]
+			},
+			mounted() {
+				console.log(2222,this.time)
+				var that =this;
+				this.timer()
+			},
+			methods: {
+				timer(){
+					if (this.time <= 0) {
+						window.location.href="questions.html";
+					} else {
+						console.log(2222,this.time)
+						this.time--;
+					}
+					setTimeout(this.timer, 1000);					
+				},
+				qa(e) {
+					console.log(e.currentTarget.dataset.type,this.questions[this.number].r)
+					if (e.currentTarget.dataset.type !=this.questions[this.number].r) {
+						$(e.currentTarget).addClass("error")
+						window.history.go(-1)
+					} else {
+						$(e.currentTarget).addClass("success");
+						if(this.number<9){
+							this.number++
+							this.count+=10
+							this.time=15;
+						}else{
+							window.location.href = "questions3.html"
+						}						
+					}
+				}
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		// $(function() {
+		// 	var i = 15;
+		// 	$("#num").html(i)
+		// 	i--;
+		// 	var timer = setInterval(function() {
+		// 		if (i < 0) {
+		// 			// window.location.href="questions.html"
+		// 			clearInterval(timer)
+		// 		} else {
+		// 			$("#num").html(i)
+		// 			i--;
+		// 		}
+		// 	}, 1000)
+
+		// });
+	</script>
+</html>

@@ -1,0 +1,341 @@
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/wenda/bg.png') ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+.back {
+	width: 0.18rem;
+	height: 0.3rem;
+	position: absolute;
+	top: 0.4rem;
+	left: 0.23rem;
+}
+
+.content {
+	width: 6.54rem;
+	min-height: 6.63rem;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 0.2rem;
+	margin: 4.9rem auto 0;
+	box-sizing: border-box;
+	padding: .7rem 0 .45rem 0;
+}
+.title{
+	font-size:0.32rem;
+	font-family:Source Han Sans CN;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+	line-height:0.6rem;
+	text-align: center;
+}
+.title span{
+	color: #FB4A25;
+}
+.desc{
+	font-size:0.22rem;
+	font-family:Source Han Sans CN;
+	font-weight:300;
+	color:rgba(153,153,153,1);
+	line-height:0.36rem;
+	text-align: center;
+	margin-bottom: .6rem;
+}
+
+.btn {
+	display: block;
+	border: 0;
+	width: 5.06rem;
+	height: 0.9rem;
+	margin: 0 auto .4rem;
+	background: linear-gradient(90deg, rgba(253, 147, 0, 1) 0%, rgba(254, 82, 32, 1) 100%);
+	border-radius: 0.45rem;
+	font-size: 0.32rem;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(254, 254, 254, 1);
+	line-height: 0.9rem;
+	text-align: center;
+}
+
+.phb {
+	display: block;
+	border: 0;
+	line-height: 0.66rem;
+	text-align: center;
+	margin: 1.1rem auto 0;
+	width: 2.5rem;
+	height: 0.66rem;
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(253, 140, 4, 1);
+	border-radius: 0.33rem;
+	font-size: 0.28rem;
+	font-weight: 500;
+	color: rgba(51, 51, 51, 1);
+}
+p.gz{
+	width: 100%;
+	height:0.27rem;
+	text-align: center;
+	font-size:0.28rem;
+	font-family:Source Han Sans CN;
+	font-weight:400;
+	color:rgba(254,253,251,1);
+	line-height:0.36rem;
+	opacity:0.4;
+	position: absolute;
+	bottom: .49rem;	
+}
+.jf{
+	font-size:0.5rem;
+	font-family:DIN;
+	font-weight:bold;
+	color:rgba(254,85,31,1);
+	text-align: center;
+	margin-bottom: .8rem;
+}
+
+header{
+	font-size:0.35rem;
+	font-family:Source Han Sans CN;
+	font-weight:500;
+	color:rgba(255,255,255,1);
+	text-align: center;
+	line-height: 1.15rem;
+}
+ul.list{
+	width:6.54rem;
+	height:11.22rem;
+	margin: 0 auto;
+	box-sizing: border-box;
+	background:rgba(255,255,255,1);
+	border-radius:0.2rem;
+	padding:0 .3rem;
+}
+.item{
+	display: flex;
+	justify-content: flex-start;
+	line-height: .9rem;
+	height: .9rem;
+	border-bottom:0.01rem solid rgba(238,238,238,1);
+}
+.item .left{
+	width: 0.43rem;
+	text-align: center;
+	font-size:0.24rem;
+	font-family:DIN;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+.item .left .wo{
+	width:0.36rem;
+	height:0.36rem;
+	background:rgba(253,140,4,1);
+	border-radius:50%;
+	color:rgba(255,255,255,1);
+	font-family:Source Han Sans CN;
+	font-weight:400;
+	font-size:0.22rem;
+	line-height: .36rem;	
+	margin-top: .25rem;
+}
+.item .left img{
+	width: 100%;
+	margin-top: .15rem;
+}
+.item .center{
+	width:2.1rem;
+	font-size:0.26rem;
+	font-family:DIN;
+	font-weight:500;
+	text-align: center;
+	color:rgba(51,51,51,1);
+}
+.item .right{
+	flex-grow: 1;
+	text-align: right;
+	font-size:0.26rem;
+	font-family:Source Han Sans CN;
+	font-weight:500;
+	color:rgba(255,126,0,1);
+}
+.list .bottom{
+	text-align: center;
+	font-size:0.22rem;
+	font-family:Source Han Sans CN;
+	font-weight:400;
+	line-height: 1.2rem;
+	color:rgba(254,86,30,1);
+}
+
+/* questions2 */
+.people{
+	width:6.26rem;
+	height:1.3rem;
+	background:rgba(64,118,223,0.3);
+	border:1px solid rgba(255,255,255,1);
+	border-radius:1.3rem;
+	margin: 1.4rem auto 0;
+	img{
+		width: 1.1rem;
+		height: 1.1rem;
+		margin: .1rem .26rem .2rem;
+		border-radius: 50%;
+	}
+	.center{
+		margin: .2rem 0;
+		.name{
+			font-size:0.24rem;
+			font-family:Source Han Sans CN;
+			font-weight:300;
+			color:rgba(255,255,255,1);
+			line-height:0.36rem;
+		}
+		.df{
+			font-size:0.5rem;
+			font-family:DIN;
+			font-weight:bold;
+			color:rgba(255,255,255,1);
+		}
+	}
+	.right{
+		margin: .35rem 0.4rem 0;
+		font-size:0.26rem;
+		font-family:Source Han Sans CN;
+		font-weight:500;
+		color:rgba(255,255,255,.7);
+		line-height:0.33rem;
+		text-align: center;
+	}
+}
+.timu{
+	width:6.54rem;
+	height:8.4rem;
+	background:rgba(255,255,255,1);
+	border-radius:0.2rem;
+	padding: 1.15rem .76rem;
+	margin: 1.44rem auto 0;
+	box-sizing: border-box;
+	position: relative;
+	.box{
+		position: absolute;
+		top: -.8rem;
+		left: 2.58rem;
+		font-size:0.5rem;
+		font-family:DIN;
+		font-weight:bold;
+		color:rgba(254,85,31,1);
+	}
+	.questions{
+		font-size:0.35rem;
+		font-family:Source Han Sans CN;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		margin: 0 0 .88rem;
+	}
+	.answers{
+		button{
+			width:5.02rem;
+			height:0.84rem;
+			background:rgba(243,247,250,1);
+			border-radius:0.42rem;
+			margin:0 0 .3rem;
+			font-size:0.3rem;
+			font-family:Source Han Sans CN;
+			font-weight:500;
+			color:rgba(79,94,118,1);
+		}
+		button.success{
+			background:rgba(17,203,162,1);
+			color: #fff;
+		}
+		button.error{
+			background:#F33F15;
+			color: #fff;
+		}
+	}
+}
+
+.num {
+  top: 0.1rem;
+  left: 0.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  position: absolute;
+  background:#fff;
+  z-index: 5;
+	line-height:1.2rem;
+	text-align: center;
+}
+.bg1{
+  position: absolute;
+  width: 0.7rem;
+  height: 1.4rem;
+  border-radius: 1.4rem 0 0 1.4rem;
+  z-index: 3;
+  background:#6125CF;
+}
+.bg2{
+  left: 0.7rem;
+  position: absolute;
+  width: 0.7rem;
+  height: 1.4rem;
+  border-radius: 0px 1.4rem 1.4rem 0;
+  z-index: 1;
+  background:#6125CF;
+}
+.pr1 {
+  position: absolute;
+  left: 0.7rem;
+  width: 0.7rem;
+  height: 1.4rem;
+  border-radius: 0px 1.4rem 1.4rem 0px;
+  z-index: 2;
+  background: #E9E9E9;
+  transform: rotate(-180deg);
+  transform-origin: 0px 0.7rem;
+}
+.pr2 {
+  position: absolute;
+  left: 0.7rem;
+  border-radius: 0px 1.4rem 1.4rem 0px;
+  z-index: 4;
+  background: #E9E9E9;
+  transform: rotate(-180deg);
+  transform-origin: 0px 0.7rem;
+}
+// .pr1 {
+// 	animation: pr1A 15s infinite linear forwards;
+// }
+// .pr2 {
+// 	animation: pr2A 15s infinite linear forwards;
+// }
+// @keyframes pr1A {
+//   0% {
+//     transform: rotate(-180deg);
+//   }
+//   50% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(0deg);
+//   }
+// }
+// @keyframes pr2A {
+//   0% {
+//     transform: rotate(-180deg);
+//   }
+//   100%{
+//     width: 0.7rem;
+//     height: 1.4rem;
+//     transform: rotate(180deg);
+//   }
+// }

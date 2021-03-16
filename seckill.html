@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" href="./css/start.css">
+		<link rel="stylesheet" href="./css/seckill.css">
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/resize.js"></script>
+		<script src="./js/NativeShare.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<img class="back" src="img/youjiantouW@2x.png" onclick="location.href='index.html'">
+				<img class="top" src="img/seckill/top.png">
+			</header>
+			<div class="content">
+				<div class="tab clearfix">
+					<div class="fl" @click="choose(10)">
+						<div class="time">10:00</div>
+						<div class="zt">{{zt[0]}}</div>
+					</div>
+					<div class="fl" @click="choose(20)">
+						<div class="time">15:00</div>
+						<div class="zt">{{zt[1]}}</div>
+					</div>
+					<div class="fl" @click="choose(24)">
+						<div class="time">20:00</div>
+						<div class="zt">{{zt[2]}}</div>
+					</div>
+
+				</div>
+				<div class="card">
+					<div class="title" v-html="html">
+
+					</div>
+					<div class="list">
+						<div class="item clearfix">
+							<img class="fl" src="img/seckill/gf1.png" alt="">
+							<div class="fl">
+								<div class="top">VIP黄金会员7天卡</div>
+								<div class="middle">专享内容、免广告等多种特权</div>
+								<div class="bottom">
+									秒杀价：￥<span id="price">0</span>
+									<span id="oldprice">原价¥15.00</span>
+								</div>
+							</div>
+							<a class="fr" href="seckill2.html">马上抢</a>
+						</div>
+						<div class="item clearfix">
+							<img class="fl" src="img/seckill/gf1.png" alt="">
+							<div class="fl">
+								<div class="top">VIP黄金会员7天卡</div>
+								<div class="middle">专享内容、免广告等多种特权</div>
+								<div class="bottom">
+									秒杀价：￥<span id="price">0</span>
+									<span id="oldprice">原价¥15.00</span>
+								</div>
+							</div>
+							<a class="fr" href="#">马上抢</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data: {
+				html: `本场剩
+						<span>00</span>:
+						<span>00</span>:
+						<span>00</span>`,
+				n: new Date().getHours(),
+				zt:['即将开始','即将开始','即将开始'],
+				list: [{
+						name: "**2456",
+						src: "img/group/peo.png"
+					},
+					{
+						name: "**2456",
+						src: "img/group/peo.png"
+					},
+				],
+			},
+			created() {
+				var h = new Date().getHours();
+				this.countDown();				
+			},
+			methods: {
+				addZero(i) {
+					return i < 10 ? "0" + i : i + "";
+				},
+				choose(n){
+					this.n = n;
+				},
+				countDown() {
+					var nowtime = new Date();
+					var n = this.n;
+					if (n < 10) {
+						var endTime = new Date(new Date().toLocaleDateString()).getTime() + 10 * 60 * 60 * 1000;
+						this.zt=['即将开始','即将开始','即将开始','开始'];
+					} else if (n < 15) {
+						var endtime = new Date(new Date().toLocaleDateString()).getTime() + 15 * 60 * 60 * 1000;
+						this.zt=['抢购中','即将开始','即将开始','剩'];
+					} else if (n < 20) {
+						var endtime = new Date(new Date().toLocaleDateString()).getTime() + 20 * 60 * 60 * 1000;
+						this.zt=['已开抢','抢购中','即将开始','剩'];
+					}else if(n < 20){
+						var endtime = new Date(new Date().toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000;
+						this.zt=['已开抢','已开抢','抢购中','剩'];
+					}
+					var lefttime = parseInt((endtime - nowtime.getTime()) / 1000);
+					// var d = parseInt(lefttime / (24 * 60 * 60))
+					var h = parseInt(lefttime / (60 * 60) % 24);
+					var m = parseInt(lefttime / 60 % 60);
+					var s = parseInt(lefttime % 60);
+					// d = this.addZero(d)
+					h = this.addZero(h);
+					m = this.addZero(m);
+					s = this.addZero(s);					
+					this.html=`本场${this.zt[3]}
+						<span>${h}</span>:
+						<span>${m}</span>:
+						<span>${s}</span>`
+					if (lefttime <= 0) {
+						this.html = "活动已结束";
+						return;
+					}
+					setTimeout(this.countDown, 1000);
+				}
+
+
+
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		var nativeShare = new NativeShare()
+		var shareData = {
+			title: document.title,
+			desc: window.location.href,
+			// 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+			link: window.location.href,
+			// icon: 'https://pic3.zhimg.com/v2-080267af84aa0e97c66d5f12e311c3d6_xl.jpg',
+			// 不要过于依赖以下两个回调，很多浏览器是不支持的
+			success: function() {
+				alert('success')
+			},
+			fail: function() {
+				alert('fail')
+			}
+		}
+		nativeShare.setShareData(shareData)
+
+		function call(command) {
+			try {
+				if (www()) {
+					alert('点击右上角分享')
+				} else {
+					nativeShare.call(command)
+				}
+			} catch (err) {
+				// 如果不支持，你可以在这里做降级处理
+				alert(err.message)
+			}
+		}
+
+		function setTitle(title) {
+			nativeShare.setShareData({
+				title: title,
+			})
+		}
+
+		function www() {
+			var ua = window.navigator.userAgent.toLowerCase();
+			if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+				return true; //是微信端
+			} else {
+				return false; //不是微信端
+			}
+		}
+	</script>
+</html>

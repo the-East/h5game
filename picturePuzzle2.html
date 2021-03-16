@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>拼图游戏</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="./js/resize.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<img src="img/youjiantouW@2x.png" onclick="window.history.go(-1);"/>
+			<div class="title"></div>
+		</header>
+		<div class="session2">
+			<div class="top2">
+				<div class="count">
+					<img id="oriimg" src="" />
+					<div class="stp">步数:</div>
+					<div id="stpcount1" class="stpcount">0
+					</div>
+					<div id="stpcount2" class="stpcount">0
+					</div>
+				</div>
+			</div>
+			<div class="ptu">
+				<div class="title">
+					<i class="icon"></i>
+					<div class="desc">
+						<div class="name">兑换森乃元日式甜品15元代金券</div>
+						<div class="ex">2020.05.0118:00 - 2020.05.31 18:00有效</div>
+					</div>
+					<i class="icon"></i>
+				</div>
+				<div class="ptumain">
+					<div class="ptudg"></div>
+					<div class="game-box">
+						<div class="game" id="game">
+							<div class='a1'></div>
+							<div class='a2'></div>
+							<div class='a3'></div>
+							<div class='a4'></div>
+							<div class='a5' id="while"></div>
+							<div class='a6'></div>
+							<div class='a7'></div>
+							<div class='a8'></div>
+							<div class='a9'></div>
+						</div>
+					</div>
+					<div class="ptudg"></div>
+				</div>
+				<div class="btnopra">
+					<div class="btndes">
+						<p>大神一般都是通过<span id="bestcount">20</span>步搞定的哦~</p>
+						<button id="start"></button>
+					</div>
+					<button id="changeimg"></button>
+				</div>
+				<div class="ptudg"></div>
+			</div>
+		</div>
+		<div id="showtips" style="display: none;">
+			<div class="tipsbox">
+				<div style="width: 100%;height: 0.18rem;"></div>
+				<div class="tipsbox2">
+					<div class="playstptl">最短步数</div>
+					<div id="playstp">--</div>
+					<div class="playstpex">还差--步就能迈进大神行列不能忍，再来一战！</div>
+					<button id="challengeagain">不服再战</button>
+				</div>
+			</div>
+			<img id="hidebtn" src="img/guanbi.png" />
+		</div>
+	</body>
+	<style>
+		#showtips {
+			z-index: 999;
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			background: rgba(0, 0, 0, .6);
+		}
+		
+		.tipsbox {
+			width: 5.15rem;
+			height: 6.51rem;
+			background: rgba(234, 234, 255, 1);
+			margin: 45% auto 0;
+		}
+		
+		.tipsbox2 {
+			width: 4.78rem;
+			height: 6.15rem;
+			border: 1px solid rgba(60, 64, 136, 1);
+			margin: 0px auto;
+			text-align: center;
+		}
+		
+		.playstptl {
+			height: 0.436rem;
+			font-size: 0.436rem;
+			font-family: Source Han Sans CN;
+			font-weight: bold;
+			color: rgba(60, 64, 136, 1);
+			margin: 0.436rem auto 0;
+		}
+		
+		#playstp {
+			height: 1rem;
+			font-size: 1.36rem;
+			font-family: DIN;
+			font-weight: bold;
+			color: rgba(247, 145, 52, 1);
+			line-height: 0.6rem;
+			margin: 0.6rem auto 0;
+		}
+		
+		.tipsbox2 button {
+			width: 3.69rem;
+			height: 0.9rem;
+			background: rgba(60, 64, 136, 1);
+			border-radius: 6px;
+			font-size: 0.363rem;
+			font-family: Source Han Sans CN;
+			font-weight: bold;
+			color: rgba(255, 255, 255, 1);
+			margin: 0.6rem auto 0;
+		}
+		
+		.playstpex {
+			font-size: 0.32rem;
+			font-family: Source Han Sans CN;
+			font-weight: 400;
+			color: rgba(60, 64, 136, 1);
+			line-height: 0.436rem;
+			margin: 0.945rem auto 0;
+		}
+		
+		#hidebtn {
+			width: 30px;
+			height: 30px;
+			margin: 15px auto 0;
+			display: flex;
+		}
+	</style>
+	<script type="text/javascript">
+		(function() {
+			//图片常量
+			const imgarr = ['t1', 't2', 't3', 't4']
+			//创建初始常量
+			// const arr=['a1','a2','a3','a4','a5','a6','a7','a8','a9'];
+			const arr = [{
+				left: '0px',
+				top: '0px',
+			}, {
+				left: '80px',
+				top: '0px'
+			}, {
+				left: '160px',
+				top: '0px'
+			}, {
+				left: '0px',
+				top: '80px'
+			}, {
+				left: '80px',
+				top: '80px'
+			}, {
+				left: '160px',
+				top: '80px'
+			}, {
+				left: '0px',
+				top: '160px'
+			}, {
+				left: '80px',
+				top: '160px'
+			}, {
+				left: '160px',
+				top: '160px'
+			}]
+			//备用变量用于随机
+			let arr1 = arr.concat()
+			//sort方法随机数组,=>函数是es6高级写法,相当于function(){}
+			arr1.sort(() => {
+				return Math.random() - 0.5;
+			})
+			// console.log(arr1)
+			let stpcount = 0;
+			let stpclick = false;
+			//创建构造函数,es6语法糖写法
+			class Puzzle {
+				constructor(arr, arr1) {
+					this.list = arr;
+					this.rlist = arr1;
+
+				}
+				//原型里添加函数,随机拼图
+				disor() {
+					//获取所有拼图标签
+					let game = document.querySelectorAll('#game div');
+					//获取空白位置
+					let lucency = document.querySelector('#while')
+					let con = this.list;
+					//遍历所有标签并为其添加left和top
+					for(let i = 0; i < game.length; i++) {
+
+						// console.log(this.rlist[i])
+						game[i].style.left = this.rlist[i].left
+						game[i].style.top = this.rlist[i].top
+
+						//给每个div加鼠标按下事件
+						// game[i].offsetLeft
+						game[i].onclick = function() {
+							if(!stpclick) {
+								return;
+							}
+							//添加拖动事件	
+							// this.onmousemove=function(){
+							//拿到空白位置的left值
+							let pleft = lucency.offsetLeft
+							//拿到空白位置的top值
+							let ptop = lucency.offsetTop
+							//获取点击方块的left
+							let gleft = this.offsetLeft;
+							//获取点击方块的top
+							let gtop = this.offsetTop
+
+							//判断其高度宽度差距决定是否移动位置
+							console.log(gleft,pleft)
+							console.log(gtop,ptop)
+							if(gleft - pleft <= 80 && gleft - pleft > 0 && gtop == ptop || pleft - gleft <= 80 && pleft - gleft > 0 && gtop == ptop) {
+								this.style.left = pleft + 'px';
+								lucency.style.left = gleft + 'px';
+								stpcount += 1;
+								countupdate(stpcount);
+							} else if(gtop - ptop <= 80 && gtop - ptop > 0 && gleft == pleft || ptop - gtop <= 80 && ptop - gtop > 0 && gleft == pleft) {
+								this.style.top = ptop + 'px';
+								lucency.style.top = gtop + 'px';
+								stpcount += 1;
+								countupdate(stpcount);
+							}
+
+							// };
+							//创建一个数组做记录
+							let a = []
+							for(let j = 0; j < con.length; j++) {
+
+								// console.log('conleft',con[j].left)
+								// console.log('game',game[j].style.left)
+								//不断与原数组做比较,如果符合就给数组a加一位数
+								if(con[j].left == game[j].style.left && con[j].top == game[j].style.top) {
+									a.push(j);
+									if(a.length == con.length) {
+										//全部符合就显示隐藏模块
+										lucency.style.opacity = '1';
+										game[j].onclick = null;
+										document.querySelectorAll('#showtips')[0].style.display = 'block';
+									}
+								}
+							}
+							console.log(a)
+
+						}
+						// //添加鼠标弹起事件
+						// game[i].onmouseup=function(){
+						// 	//取消拖动事件
+						// 	this.onmousemove=null
+						// };
+
+					}
+
+				}
+				//随机图片
+				img(imgarr) {
+					//获取所有拼图标签
+					let game = document.querySelectorAll('#game div');
+					//随机图片
+					let tu = imgarr[Math.floor(Math.random() * (imgarr.length))];
+					//遍历所有拼图div标签
+					for(let k = 0; k < this.rlist.length; k++) {
+
+						//给每个div更改背景图片
+						game[k].style.backgroundImage = ' url("./img/pintu/' + tu + '.png")';
+					}
+					document.querySelectorAll('#oriimg')[0].src = './img/pintu/' + tu + '.png';
+				}
+			}
+			//实例化构造函数
+			let pbreak = new Puzzle(arr, arr1);
+			//调用随机图片方法
+			pbreak.img(imgarr);
+			//调用拼图方法
+			pbreak.disor();
+			//计数清零
+			function countclear() {
+				stpcount = 0;
+				countupdate(stpcount);
+			}
+
+			function countupdate(data) {
+				data = data > 99 ? 99 : data;
+				let tmp = data < 10 ? ("0" + data) : ("" + data);
+				document.querySelectorAll('#stpcount1')[0].innerHTML = tmp.substr(0, 1);
+				document.querySelectorAll('#stpcount2')[0].innerHTML = tmp.substr(1, 1);
+			}
+			document.querySelector('#start').onclick = function() {
+				stpclick = true;
+			}
+			document.querySelector('#changeimg').onclick = function() {
+				pbreak.img(imgarr);
+				pbreak.disor();
+				countclear();
+				stpclick = false;
+			}
+			document.querySelector('#challengeagain').onclick = function() {
+				document.querySelectorAll('#showtips')[0].style.display = 'none';
+			}
+			document.querySelector('#hidebtn').onclick = function() {
+				document.querySelectorAll('#showtips')[0].style.display = 'none';
+			}
+		})()
+	</script>
+
+</html>

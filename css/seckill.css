@@ -1,0 +1,83 @@
+html { min-height: 100%; }
+
+body { width: 100%; min-height: 100%; background-size: 100% 100%; background: #FFDE27 no-repeat; }
+
+header .top { width: 6.9rem; height: 6.63rem; margin: 0.53rem 0.3rem 0.3rem; }
+
+.content { width: 6.9rem; margin: 0 auto 0.74rem; }
+
+.content .tab { height: 0.9rem; background: #ffec80; border: 0.03rem solid #ffb607; border-radius: 0.2rem 0.2rem 0 0; overflow: hidden; }
+
+.content .tab .fl { width: 33%; height: 0.9rem; text-align: center; padding-top: 0.2rem; }
+
+.content .tab .fl .time { font-family: Arial; font-weight: 400; color: #e8720a; line-height: 0.3rem; }
+
+.content .tab .fl .zt { font-family: Microsoft YaHei; font-weight: 400; color: #e8720a; }
+
+.content .tab .fl + .fl { border-left: 0.03rem solid #FFB607; }
+
+.content .card { background: #ffb607; padding: 0.4rem 0.15rem; box-sizing: border-box; }
+
+.content .card .title { width: 3.2rem; height: 0.52rem; line-height: 0.52rem; margin: 0 auto; background: #ffec80; border-radius: 0.26rem; text-align: center; font-family: Microsoft YaHei; font-weight: 400; color: #dd6800; }
+
+.content .card .title span { width: 0.4rem; height: 0.35rem; line-height: 0.35rem; display: inline-block; background: #dd6800; border-radius: 0.05rem; font-family: Arial; font-weight: 400; color: #ffec80; }
+
+.content .card .list { margin-top: 0.38rem; }
+
+.content .card .list .item { width: 6.6rem; height: 2.19rem; background: #ffec80; border-radius: 0.1rem; margin-bottom: 0.1rem; }
+
+.content .card .list .item img { width: 1.2rem; height: 1.2rem; margin: 0.47rem 0.21rem 0 0.24rem; }
+
+.content .card .list .item a { margin: 0.84rem 0.3rem 0.83rem 0; width: 1.37rem; height: 0.52rem; line-height: 0.52rem; text-align: center; background: linear-gradient(90deg, #4a361b 0%, #303437 100%); border-radius: 0.26rem; }
+
+.content .card .list .item div.fl { width: 3rem; margin: 0.5rem 0 0; font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 500; color: rgba(232, 114, 10, 0.6); overflow: hidden; white-space: nowrap; }
+
+.content .card .list .item div.fl .top { font-size: 0.3rem; font-family: Source Han Sans CN; color: #dd6800; }
+
+.content .card .list .item div.fl .bottom #price { font-size: 0.4rem; font-family: Source Han Sans CN; font-weight: 500; color: #e8720a; }
+
+.sec { text-align: center; margin-top: .4rem; font-size: 0.35rem; font-family: Source Han Sans CN; font-weight: 500; color: white; line-height: 0.48rem; }
+
+.con { width: 6.9rem; height: 3.6rem; background: url(../img/seckill/vip.png) no-repeat; background-size: 100%; margin: 0.61rem auto 0.43rem; box-sizing: border-box; padding: 0.65rem 0.56rem 0.4rem; font-weight: 300; color: #292116; }
+
+.con .tit { font-size: 0.46rem; font-family: DIN; font-weight: 500; color: #292116; }
+
+.con .dec { margin-top: 0.26rem; }
+
+.con .pir { color: #292116; margin-top: 1rem; }
+
+.con .pir span#pirce { font-size: 0.4rem; font-family: DIN; font-weight: 500; color: #292116; }
+
+.exclusive { width: 6.9rem; margin: 0rem auto 0.43rem; }
+
+.exclusive .tit { border-left: 0.06rem solid #FFDB3C; font-size: 0.3rem; font-family: Source Han Sans CN; font-weight: 500; color: #292116; padding-left: 0.1rem; }
+
+.exclusive .mlist { text-align: center; font-weight: 300; color: #292116; margin-top: 0.73rem; }
+
+.exclusive .mlist img { width: 0.6rem; height: 0.6rem; margin-bottom: 0.45rem; }
+
+.exclusive button { width: 6.9rem; height: 0.89rem; background: #ffde27; border-radius: 0.45rem; font-size: 0.3rem; font-family: Source Han Sans CN; font-weight: 500; color: #262228; margin-top: 3.54rem; }
+
+#oldprice { text-decoration: line-through; opacity: 0.6; }
+
+.dialog { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999; width: 5.2rem; height: 6.2rem; background: #272328; border-radius: 0.1rem; }
+
+.dialog .title { font-size: 0.4rem; font-family: Source Han Sans CN; font-weight: 400; text-align: center; color: #ffec80; margin-top: 0.7rem; }
+
+.dialog .card { width: 4.8rem; height: 2.32rem; margin: 0.52rem auto 0.3rem; background: url(../img/seckill/card.png) no-repeat; background-size: 100%; box-sizing: border-box; padding: 0.48rem 0.26rem 0 0.37rem; }
+
+.dialog .card .a { background: url(../img/seckill/card1.png) no-repeat; background-size: 100%; width: 4.17rem; height: 1.31rem; overflow: hidden; }
+
+.dialog .card .a .b { text-align: center; width: 1.06rem; font-size: 0.3rem; font-family: Source Han Sans CN; line-height: 1.31rem; font-weight: 400; color: #ffca27; }
+
+.dialog .card .a .c { padding-top: 0.38rem; flex-grow: 1; text-align: center; }
+
+.dialog .card .a .c .tit { font-size: 0.3rem; font-family: DIN; font-weight: 500; color: #272328; }
+
+.dialog .card .a .c .dec { font-size: 0.2rem; font-family: Source Han Sans CN; font-weight: 300; color: #979797; }
+
+.dialog .desc { font-size: 0.24rem; text-align: center; font-family: Source Han Sans CN; font-weight: 300; color: white; }
+
+.dialog .look { width: 4.6rem; height: 0.78rem; line-height: 0.78rem; text-align: center; background: #ffde27; border-radius: 0.39rem; font-size: 0.3rem; font-weight: 500; color: #272328; margin: 0.4rem auto; }
+
+.dialog .close { position: absolute; bottom: -0.95rem; left: 2.32rem; width: 0.65rem; }

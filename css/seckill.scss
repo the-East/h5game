@@ -1,0 +1,289 @@
+html { min-height: 100%; }
+
+body{
+	width: 100%;
+	min-height: 100%;
+	background-size: 100% 100%;
+	background:#FFDE27 no-repeat;
+}
+header{
+	.top{
+		width: 6.9rem;
+		height: 6.63rem;
+		margin: 0.53rem 0.3rem 0.3rem;
+	}	
+}
+.content{
+	width:6.9rem;
+	margin: 0 auto 0.74rem;
+	.tab{
+		height:0.9rem;
+		background:rgba(255,236,128,1);
+		border:0.03rem solid rgba(255,182,7,1);
+		border-radius:0.2rem 0.2rem 0 0;
+		overflow: hidden;
+		.fl{
+			width: 33%;
+			height:0.9rem;
+			text-align: center;
+			padding-top: 0.2rem;
+			.time{
+				font-family:Arial;
+				font-weight:400;
+				color:rgba(232,114,10,1);
+				line-height: 0.3rem;
+			}
+			.zt{
+				font-family:Microsoft YaHei;
+				font-weight:400;
+				color:rgba(232,114,10,1);
+			}
+		}
+		.fl+.fl{
+			border-left:0.03rem solid #FFB607;
+		}
+	}
+	.card{
+		background:rgba(255,182,7,1);
+		padding: 0.4rem 0.15rem;
+		box-sizing: border-box;
+		.title{
+			width:3.2rem;
+			height:0.52rem;
+			line-height:0.52rem;
+			margin:0 auto;
+			background:rgba(255,236,128,1);
+			border-radius:0.26rem;
+			text-align: center;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(221,104,0,1);			
+			span{
+				width:0.4rem;
+				height:0.35rem;
+				line-height:0.35rem;
+				display: inline-block;
+				background:rgba(221,104,0,1);
+				border-radius:0.05rem;
+				font-family:Arial;
+				font-weight:400;
+				color:rgba(255,236,128,1);
+			}
+		}
+		.list{
+			margin-top: 0.38rem;
+			.item{
+				width:6.6rem;
+				height:2.19rem;
+				background:rgba(255,236,128,1);
+				border-radius:0.1rem;
+				margin-bottom: 0.1rem;
+				img{
+					width: 1.2rem;
+					height: 1.2rem;
+					margin: 0.47rem 0.21rem 0 0.24rem;
+				}
+				a{
+					margin: 0.84rem 0.3rem 0.83rem 0;
+					width:1.37rem;
+					height:0.52rem;
+					line-height:0.52rem;
+					text-align: center;
+					background:linear-gradient(90deg,rgba(74,54,27,1) 0%,rgba(48,52,55,1) 100%);
+					border-radius:0.26rem;
+				}
+				div.fl{
+					width:3rem;
+					margin: 0.5rem 0 0;
+					font-size:0.22rem;
+					font-family:Source Han Sans CN;
+					font-weight:500;
+					color:rgba(232,114,10,0.6);
+					overflow: hidden;
+					white-space: nowrap;
+					.top{
+						font-size:0.3rem;
+						font-family:Source Han Sans CN;
+						color:rgba(221,104,0,1);
+					}
+					.middle{}
+					.bottom{
+						#price{
+							font-size:0.4rem;
+							font-family:Source Han Sans CN;
+							font-weight:500;
+							color:rgba(232,114,10,1);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sec{
+	text-align: center;
+	margin-top: .4rem;
+	font-size:0.35rem;
+	font-family:Source Han Sans CN;
+	font-weight:500;
+	color:rgba(255,255,255,1);
+	line-height:0.48rem;
+}
+
+.con{
+	width: 6.9rem;
+	height: 3.6rem;
+	background: url(../img/seckill/vip.png) no-repeat;
+	background-size: 100%;
+	margin: 0.61rem auto 0.43rem;
+	box-sizing: border-box;
+	padding: 0.65rem 0.56rem 0.4rem;
+	font-weight:300;
+	color:rgba(41,33,22,1);
+	.tit{
+		font-size:0.46rem;
+		font-family:DIN;
+		font-weight:500;
+		color:rgba(41,33,22,1);
+	}
+	.dec{
+		margin-top: 0.26rem;
+	}
+	.pir{
+		color:rgba(41,33,22,1);
+		margin-top: 1rem;
+		span#pirce{
+			font-size: 0.4rem;
+			font-family:DIN;
+			font-weight: 500;
+			color: #292116;
+		}
+	}
+}
+.exclusive{
+	width: 6.9rem;
+	margin: 0rem auto 0.43rem;
+	.tit{
+		border-left:0.06rem solid #FFDB3C;
+		font-size:0.3rem;
+		font-family:Source Han Sans CN;
+		font-weight:500;
+		color:rgba(41,33,22,1);
+		padding-left: 0.1rem;
+	}
+	.mlist{
+		text-align: center;
+		font-weight:300;
+		color:rgba(41,33,22,1);
+		margin-top: 0.73rem;
+		img{
+			width: 0.6rem;
+			height: 0.6rem;
+			margin-bottom: 0.45rem;
+		}
+	}
+	button{
+		width:6.9rem;
+		height:0.89rem;
+		background:rgba(255,222,39,1);
+		border-radius:0.45rem;
+		font-size:0.3rem;
+		font-family:Source Han Sans CN;
+		font-weight:500;
+		color:rgba(38,34,40,1);
+		margin-top: 3.54rem;
+	}
+}
+
+#oldprice{
+	text-decoration:line-through;
+	opacity:0.6;
+}
+.dialog{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 999;
+	width:5.2rem;
+	height:6.2rem;
+	background:rgba(39,35,40,1);
+	border-radius:0.1rem;
+	.title{
+		font-size:0.4rem;
+		font-family:Source Han Sans CN;
+		font-weight:400;
+		text-align: center;
+		color:rgba(255,236,128,1);
+		margin-top: 0.7rem;
+	}
+	.card{
+		width:4.8rem;
+		height: 2.32rem;
+		margin:  0.52rem auto 0.3rem;
+		background: url(../img/seckill/card.png) no-repeat;
+		background-size: 100%;
+		box-sizing: border-box;
+		padding: 0.48rem 0.26rem 0 0.37rem;
+		.a{
+			background: url(../img/seckill/card1.png) no-repeat;
+			background-size: 100%;
+			width: 4.17rem;
+			height: 1.31rem;
+			overflow: hidden;
+			.b{
+				text-align: center;
+				width: 1.06rem;
+				font-size:0.3rem;
+				font-family:Source Han Sans CN;
+				line-height: 1.31rem;
+				font-weight:400;
+				color:rgba(255,202,39,1);
+			}
+			.c{
+				padding-top: 0.38rem;
+				flex-grow: 1;
+				text-align: center;
+				.tit{
+					font-size:0.3rem;
+					font-family:DIN;
+					font-weight:500;
+					color:rgba(39,35,40,1);
+				}
+				.dec{
+					font-size:0.2rem;
+					font-family:Source Han Sans CN;
+					font-weight:300;
+					color:rgba(151,151,151,1);
+				}
+				
+			}
+		}
+	}
+	.desc{
+		font-size:0.24rem;
+		text-align: center;
+		font-family:Source Han Sans CN;
+		font-weight:300;
+		color:rgba(255,255,255,1);
+	}
+	.look{
+		width:4.6rem;
+		height:0.78rem;
+		line-height:0.78rem;
+		text-align: center;
+		background:rgba(255,222,39,1);
+		border-radius:0.39rem;
+		font-size:0.3rem;
+		font-weight:500;
+		color:rgba(39,35,40,1);
+		margin:  0.4rem auto;
+	}
+	.close{
+		position: absolute;
+		bottom: -0.95rem;
+		left: 2.32rem;
+		width: 0.65rem;
+	}
+}

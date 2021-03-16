@@ -1,0 +1,130 @@
+.run{
+	display: block;
+	width: 2.41rem;
+	position: absolute;
+	left: 2.6rem;
+	bottom: 0.74rem
+}
+.box{
+	// margin:2.9rem  0.27rem;
+	position: absolute;
+	top: 2.9rem;
+	left: 0.27rem;
+	width: 7rem;
+	height: 7rem;
+	flex-wrap: wrap;
+	.s{
+		width: 1rem;
+		height: 1rem;
+		background-image: url(../img/monopoly/g.png);
+		background-size: 100% 100%;
+		position: absolute;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+img.person{
+	width: 0.99rem;
+	height: 1.36rem;
+	// height: 1rem;
+	position: absolute;
+	top: 2.26rem;
+	// top: 2.9rem;
+	left: 0.27rem;
+}
+
+img.num{
+	width: 1.26rem;
+	height: 1.64rem;
+	position: absolute;
+	top: 4.4rem;
+	left: 3.19rem;
+}
+img.dice{
+	width: 1.63rem;
+	height: 1.81rem;
+	position: absolute;
+	top: 5.91rem;
+	left: 2.93rem;
+}
+
+.tl{
+	display: block;
+	width: 2.28rem;
+	height: 0.34rem;
+	text-align: center;
+	padding: 0.13rem 0 0.13rem 0.54rem;
+	position: absolute;
+	left: 2.39rem;
+	bottom: 0.37rem;
+	background: url(../img/monopoly/t.png) no-repeat;
+	background-size: 0.54rem 0.6rem;	
+	line-height:0.34rem;
+	.a{
+		z-index: 33;
+		width: 2.28rem;
+		height: 0.34rem;
+		position: absolute;
+		font-size:0.2rem;
+		font-family:FZLanTingHei-R-GBK;
+		font-weight:400;
+		color:rgba(255,245,235,1);
+	}
+	.b{
+		z-index: 22;
+		width: 0.38rem;
+		height: 0.34rem;
+		position: absolute;
+		background:linear-gradient(90deg,rgba(252,89,13,1) 0%,rgba(253,191,23,1) 100%);
+		border-radius:0 0.17rem 0.17rem 0;
+	}
+	.c{
+		z-index: 11;
+		width: 2.28rem;
+		height: 0.34rem;
+		position: absolute;
+		background:rgba(132,60,12,1);
+		border-radius:0 0.17rem 0.17rem 0;
+
+	}
+}
+.overlay{
+	display: none;
+	.title{
+		width: 6.13rem;
+		position: absolute;
+		top: 2.73rem;
+		left: 0.69rem;
+		z-index: 666;
+	}
+	.kd{
+		width:4.86rem;
+		height:4.86rem;
+		background:rgba(255,255,255,1);
+		border-radius:0.15rem;
+		position: absolute;
+		top: 3.65rem;
+		left: 1.35rem;
+		z-index: 665;
+		.dian{
+			width: 1.29rem;
+			margin: 0.63rem auto 0;
+			display: block;
+		}
+		p{
+			font-size:0.3rem;
+			font-family:FZCuYuan-M03S;
+			font-weight:400;
+			color:rgba(76,76,76,1);
+			line-height:0.36rem;
+			text-align: center;
+		}
+		.btn{
+			width: 4.28rem;
+			margin: 0.9rem auto 0;
+			display: block;
+		}
+	}
+}

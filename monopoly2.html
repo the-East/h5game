@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+		<title></title>
+		<link rel="stylesheet" href="./css/start.css">
+		<link rel="stylesheet" href="./css/monopoly.css">
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/resize.js"></script>
+		<script src="./js/NativeShare.js"></script>
+	</head>
+	<body style="background:#fff url(img/monopoly/bg1.png) no-repeat;background-size: 100% 100%">
+		<img class="back" src="img/youjiantouW@2x.png" onclick="history.go(-1)">
+		<div class="box flex-start warp">
+			<div class="s" style="top:0rem;left: 0rem;"><img src="img/monopoly/g(6).png" ></div>
+			<div class="s" style="top:0rem;left: 1.2rem;"></div>
+			<div class="s" style="top:0rem;left: 2.4rem;"><img src="img/monopoly/g(9).png" ></div>
+			<div class="s" style="top:0rem;left: 3.6rem;"><img src="img/monopoly/g(1).png" ></div>
+			<div class="s" style="top:0rem;left: 4.8rem;"></div>
+			<div class="s" style="top:0rem;left: 6rem;"><img src="img/monopoly/g(5).png" ></div>
+			<div class="s" style="top:1.2rem;left: 6rem;"><img src="img/monopoly/g(3).png" ></div>
+			<div class="s" style="top:2.4rem;left: 6rem;"><img src="img/monopoly/g(7).png" ></div>
+			<div class="s" style="top:3.6rem;left: 6rem;"><img src="img/monopoly/g(9).png" ></div>
+			<div class="s" style="top:4.8rem;left: 6rem;"></div>
+			<div class="s" style="top:6rem;left: 6rem;"><img src="img/monopoly/g(4).png" ></div>			
+			<div class="s" style="top:6rem;left: 4.8rem;"></div>			
+			<div class="s" style="top:6rem;left: 3.6rem;"><img src="img/monopoly/g(9).png" ></div>
+			<div class="s" style="top:6rem;left: 2.4rem;"></div>
+			<div class="s" style="top:6rem;left: 1.2rem;"><img src="img/monopoly/g(3).png" ></div>
+			<div class="s" style="top:4.8rem;left: 1.2rem;"><img src="img/monopoly/g(1).png" ></div>
+			<div class="s" style="top:4.8rem;left: 0rem;"></div>
+			<div class="s" style="top:3.6rem;left: 0rem;"><img src="img/monopoly/g(5).png" ></div>
+			<div class="s" style="top:2.4rem;left: 0rem;"><img src="img/monopoly/g(3).png" ></div>
+			<div class="s" style="top:1.2rem;left: 0rem;"></div>
+		</div>
+		<img class="num" src="">
+		<img class="dice" src="img/monopoly/dice.png">
+		<img class="person" src="img/monopoly/head.png">
+		<img class="run" src="img/monopoly/run.png">
+		<div class="tl">
+			<p class="a">体力值1/6</p>
+			<p class="b"></p>
+			<p class="c"></p>
+		</div>
+		<div class="overlay">
+			<img class="title" src="img/monopoly/tit.png" >
+			<div class="kd">
+				<img class="dian" src="img/monopoly/dian.png" >
+				<p class="prize">体力</p>
+				<img class="btn" src="img/monopoly/btn.png" >
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".num,.dice").hide();
+		let $a = $(".s");
+		let data = [];
+		let totalCount = 0;
+		let prize =[,,'红包','体力',,'神秘大奖']
+		$a.each(function(i, elem) {
+			var obj = {};
+			obj.left = $(elem).offset().left;
+			obj.top = $(elem).offset().top - 36;
+			data.push(obj);
+		})
+		function throttle(fn,delay=200){
+			//首先设定一个变量，在没有执行我们的定时器时为null
+			let timer = null;
+			return function(){
+				//当我们发现这个定时器存在时，则表示定时器已经在运行中，需要返回
+				if(timer) return;
+				timer = setTimeout(()=>{
+					fn.apply(this,arguments);
+					timer = null;
+				},delay);
+			}
+		}
+		function debounce(fn,delay=1200){
+			let timer = null;
+			return function(){
+				if(timer) clearTimeout(timer);
+				timer = setTimeout(()=>{
+					fn.apply(this,arguments);
+					timer = null;
+				},delay);
+			}
+		}
+		function Run() {
+			$(".num").fadeIn("slow");
+			var n = $(".start").css('left')
+			let old = totalCount % 20;
+			var i = Math.floor(Math.random() * 6 + 1);
+			totalCount= totalCount % 20+ i;			
+			$(".num").attr("src", "img/monopoly/" + i + ".png");
+			console.log(data, i, totalCount, old);
+			let move = data.slice(old+1,totalCount+1);
+			if (totalCount > 20) {
+				move = data.slice(old+1,20+1).concat(data.slice(0,totalCount-20+1))
+			}
+			// $(".person").animate(data[totalCount], 100, "linear"); //根据步数进行移动	
+			for(m of move){
+				console.log(m)
+				$(".person").animate(m, "slow"); 
+			}
+			$(".num").fadeOut("slow");
+			if(prize[totalCount]!=undefined){
+				$('.prize').html(prize[totalCount])
+				$(".overlay").fadeIn(3000);				
+			}
+		}
+		$(".run").on('click',throttle(Run));
+		$(".btn").on('click',()=>{
+			$(".overlay").css("display","none")
+		});
+	</script>
+</html>

@@ -1,0 +1,74 @@
+html { height: 100%; }
+
+body { width: 100%; height: 100%; background-image: url("../img/wenda/bg.png"); background-repeat: no-repeat; background-size: 100% 100%; overflow: hidden; }
+
+.back { width: 0.18rem; height: 0.3rem; position: absolute; top: 0.4rem; left: 0.23rem; }
+
+.content { width: 6.54rem; min-height: 6.63rem; background: white; border-radius: 0.2rem; margin: 4.9rem auto 0; box-sizing: border-box; padding: .7rem 0 .45rem 0; }
+
+.title { font-size: 0.32rem; font-family: Source Han Sans CN; font-weight: 500; color: #333333; line-height: 0.6rem; text-align: center; }
+
+.title span { color: #FB4A25; }
+
+.desc { font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 300; color: #999999; line-height: 0.36rem; text-align: center; margin-bottom: .6rem; }
+
+.btn { display: block; border: 0; width: 5.06rem; height: 0.9rem; margin: 0 auto .4rem; background: linear-gradient(90deg, #fd9300 0%, #fe5220 100%); border-radius: 0.45rem; font-size: 0.32rem; font-family: Source Han Sans CN; font-weight: 500; color: #fefefe; line-height: 0.9rem; text-align: center; }
+
+.phb { display: block; border: 0; line-height: 0.66rem; text-align: center; margin: 1.1rem auto 0; width: 2.5rem; height: 0.66rem; background: white; border: 1px solid #fd8c04; border-radius: 0.33rem; font-size: 0.28rem; font-weight: 500; color: #333333; }
+
+p.gz { width: 100%; height: 0.27rem; text-align: center; font-size: 0.28rem; font-family: Source Han Sans CN; font-weight: 400; color: #fefdfb; line-height: 0.36rem; opacity: 0.4; position: absolute; bottom: .49rem; }
+
+.jf { font-size: 0.5rem; font-family: DIN; font-weight: bold; color: #fe551f; text-align: center; margin-bottom: .8rem; }
+
+header { font-size: 0.35rem; font-family: Source Han Sans CN; font-weight: 500; color: white; text-align: center; line-height: 1.15rem; }
+
+ul.list { width: 6.54rem; height: 11.22rem; margin: 0 auto; box-sizing: border-box; background: white; border-radius: 0.2rem; padding: 0 .3rem; }
+
+.item { display: flex; justify-content: flex-start; line-height: .9rem; height: .9rem; border-bottom: 0.01rem solid #eeeeee; }
+
+.item .left { width: 0.43rem; text-align: center; font-size: 0.24rem; font-family: DIN; font-weight: 500; color: #333333; }
+
+.item .left .wo { width: 0.36rem; height: 0.36rem; background: #fd8c04; border-radius: 50%; color: white; font-family: Source Han Sans CN; font-weight: 400; font-size: 0.22rem; line-height: .36rem; margin-top: .25rem; }
+
+.item .left img { width: 100%; margin-top: .15rem; }
+
+.item .center { width: 2.1rem; font-size: 0.26rem; font-family: DIN; font-weight: 500; text-align: center; color: #333333; }
+
+.item .right { flex-grow: 1; text-align: right; font-size: 0.26rem; font-family: Source Han Sans CN; font-weight: 500; color: #ff7e00; }
+
+.list .bottom { text-align: center; font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 400; line-height: 1.2rem; color: #fe561e; }
+
+/* questions2 */
+.people { width: 6.26rem; height: 1.3rem; background: rgba(64, 118, 223, 0.3); border: 1px solid white; border-radius: 1.3rem; margin: 1.4rem auto 0; }
+
+.people img { width: 1.1rem; height: 1.1rem; margin: .1rem .26rem .2rem; border-radius: 50%; }
+
+.people .center { margin: .2rem 0; }
+
+.people .center .name { font-size: 0.24rem; font-family: Source Han Sans CN; font-weight: 300; color: white; line-height: 0.36rem; }
+
+.people .center .df { font-size: 0.5rem; font-family: DIN; font-weight: bold; color: white; }
+
+.people .right { margin: .35rem 0.4rem 0; font-size: 0.26rem; font-family: Source Han Sans CN; font-weight: 500; color: rgba(255, 255, 255, 0.7); line-height: 0.33rem; text-align: center; }
+
+.timu { width: 6.54rem; height: 8.4rem; background: white; border-radius: 0.2rem; padding: 1.15rem .76rem; margin: 1.44rem auto 0; box-sizing: border-box; position: relative; }
+
+.timu .box { position: absolute; top: -.8rem; left: 2.58rem; font-size: 0.5rem; font-family: DIN; font-weight: bold; color: #fe551f; }
+
+.timu .questions { font-size: 0.35rem; font-family: Source Han Sans CN; font-weight: 500; color: #333333; margin: 0 0 .88rem; }
+
+.timu .answers button { width: 5.02rem; height: 0.84rem; background: #f3f7fa; border-radius: 0.42rem; margin: 0 0 .3rem; font-size: 0.3rem; font-family: Source Han Sans CN; font-weight: 500; color: #4f5e76; }
+
+.timu .answers button.success { background: #11cba2; color: #fff; }
+
+.timu .answers button.error { background: #F33F15; color: #fff; }
+
+.num { top: 0.1rem; left: 0.1rem; width: 1.2rem; height: 1.2rem; border-radius: 50%; position: absolute; background: #fff; z-index: 5; line-height: 1.2rem; text-align: center; }
+
+.bg1 { position: absolute; width: 0.7rem; height: 1.4rem; border-radius: 1.4rem 0 0 1.4rem; z-index: 3; background: #6125CF; }
+
+.bg2 { left: 0.7rem; position: absolute; width: 0.7rem; height: 1.4rem; border-radius: 0px 1.4rem 1.4rem 0; z-index: 1; background: #6125CF; }
+
+.pr1 { position: absolute; left: 0.7rem; width: 0.7rem; height: 1.4rem; border-radius: 0px 1.4rem 1.4rem 0px; z-index: 2; background: #E9E9E9; transform: rotate(-180deg); transform-origin: 0px 0.7rem; }
+
+.pr2 { position: absolute; left: 0.7rem; border-radius: 0px 1.4rem 1.4rem 0px; z-index: 4; background: #E9E9E9; transform: rotate(-180deg); transform-origin: 0px 0.7rem; }

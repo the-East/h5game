@@ -1,0 +1,99 @@
+html { min-height: 100%; }
+
+body { width: 100%; min-height: 100%; min-height: 17.69rem; background-size: 100% 100%; background: linear-gradient(0deg, #e9685c 0%, #b9281e 100%) no-repeat; }
+
+header { position: relative; height: 4.65rem; background: url(../img/group/head.png) no-repeat; background-size: 100% 100%; }
+
+header .zt { position: absolute; left: 0.36rem; bottom: 0.18rem; width: 3.75rem; height: 3.09rem; }
+
+.content { width: 6.9rem; margin: 0 auto; background: #FFFBF6; box-shadow: 0rem 0.06rem 0.1rem 0rem rgba(185, 41, 30, 0.6); border-radius: 0.1rem; }
+
+.content .js { width: 2.33rem; margin: 0.42rem 2.27rem; }
+
+.content .desc { width: 6.9rem; color: #BD9F78; font-size: 0.28rem; font-family: Source Han Sans CN; font-weight: 400; line-height: 0.40rem; text-align: center; white-space: pre-line; }
+
+.content .quan { width: 6.3rem; margin: 0.9rem auto 0.62rem; position: relative; }
+
+.content .quan .fl { width: 1.8rem; height: 2.1rem; position: relative; background: url(../img/group/quan.png) no-repeat; background-size: 100%; text-align: center; color: #fffbf6; font-weight: 400; }
+
+.content .quan .fl .title { margin: 0.55rem 0 0rem; font-size: 0.24rem; }
+
+.content .quan .fl .pp { font-size: 0.24rem; font-family: Microsoft YaHei; line-height: 0.63rem; }
+
+.content .quan .fl .pp span { font-size: 0.6rem; font-family: DIN; font-weight: bold; }
+
+.content .quan .fl .tou { font-size: 0.2rem; font-family: Microsoft YaHei; position: absolute; bottom: .13rem; width: 1.8rem; }
+
+.content .quan div + div.fl { margin-left: 0.45rem; }
+
+.content .quan .action { transform: scale(1.1); }
+
+.content .quan .action .right { position: absolute; top: -0.23rem; left: 0.69rem; width: .4rem; }
+
+.content button { width: 6.3rem; height: 0.8rem; margin: 0 0.3rem 0.43rem; background: linear-gradient(0deg, #e86559 0%, #c4362b 100%); font-size: 0.3rem; font-family: Source Han Sans CN; font-weight: 400; color: #fffbf6; line-height: 0.48rem; border-radius: 0.4rem; }
+
+.content .group { width: 6.3rem; height: 4.96rem; margin: 0 auto .4rem; padding: 0.58rem 0; box-sizing: border-box; background: url(../img/group/say.png) no-repeat; background-size: 100%; position: relative; }
+
+.content .group .isgroup { position: absolute; top: .3rem; right: 0.16rem; font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 400; color: #c5362c; width: 0.9rem; height: 0.38rem; line-height: 0.38rem; text-align: center; border: 1px solid #c5362c; border-radius: 0.19rem; }
+
+.content .group .pro { margin: 0 .28rem; position: relative; }
+
+.content .group .pro img { width: 1rem; height: 1rem; }
+
+.content .group .pro .tz { width: 0.9rem; text-align: center; height: 0.38rem; background: #c5362c; border-radius: 0.19rem; font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 400; color: #fffbf6; position: relative; top: -0.2rem; margin: 0 .05rem; }
+
+.content .group .pro .name { font-size: 0.24rem; text-align: center; font-family: DIN; font-weight: 500; position: relative; top: -0.2rem; color: #5a3200; }
+
+.content .group .say { font-size: 0.28rem; font-family: Source Han Sans CN; font-weight: 500; color: #5a3200; line-height: 0.48rem; }
+
+.content .group .con { width: 3.85rem; height: 0.58rem; width: 4rem; height: 0.9rem; background: url(../img/group/601.png); background-size: 100%; box-shadow: 0rem 0.06rem 0.4rem 0rem rgba(232, 201, 169, 0.6); border-radius: 0.08rem; font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 400; color: #7e5b37; line-height: 0.58rem; padding-left: .32rem; }
+
+.content .group .p { font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 400; color: #7e5b37; text-align: center; margin: 0.21rem 0 0.57rem; }
+
+.content .group .list { margin: 0 0.5rem; }
+
+.content .group .list .item { width: 0.82rem; overflow: hidden; }
+
+.content .group .list div + div.item { margin-left: 0.6rem; }
+
+.content .group .list img { width: 0.8rem; height: 0.8rem; }
+
+.content .group .list .tz { width: 0.6rem; height: 0.25rem; text-align: center; background: #c5362c; border-radius: 0.13rem; font-size: 0.16rem; font-family: Source Han Sans CN; font-weight: 400; color: #fffbf6; position: relative; top: -0.2rem; margin: 0 .05rem; }
+
+.content .group .list .name { font-size: 0.2rem; text-align: center; font-family: DIN; font-weight: 500; position: relative; top: -0.1rem; color: #5a3200; }
+
+footer .gz { width: 2.33rem; margin: 0.48rem 2.57rem 0.4rem; }
+
+footer .desc { width: 6.73rem; margin: 0 auto; padding-bottom: 0.23rem; font-size: 0.22rem; font-family: Source Han Sans CN; font-weight: 400; color: #f3dfc2; line-height: 0.48rem; white-space: pre-line; }
+
+.line { width: 5.94rem; height: 0.02rem; margin: 0 auto; background: white; }
+
+#app { width: 100%; height: 100%; position: relative; }
+
+.dialog { position: fixed; top: 2rem; top: 50%; transform: translateY(-50%); z-index: 999; left: 0.95rem; width: 5.6rem; background: white; border-radius: 0.1rem; padding: 0.4rem .34rem 0.87rem; box-sizing: border-box; }
+
+.dialog .imgg { width: 4.22rem; height: 1.89rem; margin: 0.56rem 0.34rem 0.77rem; }
+
+.dialog .title { font-size: 0.32rem; font-family: Source Han Sans CN; font-weight: 500; color: #333333; text-align: center; }
+
+.dialog .quan { width: 100%; margin: 0.9rem auto 0.62rem; position: relative; }
+
+.dialog .quan .fl { width: 1.37rem; height: 1.6rem; position: relative; background: url(../img/group/quan.png) no-repeat; background-size: 100%; text-align: center; color: #fffbf6; font-weight: 400; }
+
+.dialog .quan .fl .title { margin: 0.41rem 0 0rem; font-size: 0.18rem; color: #fffbf6; }
+
+.dialog .quan .fl .pp { font-size: 0.18rem; font-family: Microsoft YaHei; line-height: 0.48rem; }
+
+.dialog .quan .fl .pp span { font-size: 0.46rem; font-family: DIN; font-weight: bold; }
+
+.dialog .quan .fl .tou { font-size: 0.15rem; font-family: Microsoft YaHei; position: absolute; bottom: .09rem; width: 1.37rem; }
+
+.dialog .quan div + div.fl { margin-left: 0.39rem; }
+
+.dialog .quan .action { transform: scale(1.1); }
+
+.dialog .quan .action .right { position: absolute; top: -0.19rem; left: 0.545rem; width: .3rem; }
+
+.dialog .dd { font-size: 0.16rem; font-family: Microsoft YaHei; font-weight: 400; color: #333333; line-height: 0.64rem; text-align: center; }
+
+.dialog button { width: 4.9rem; height: 0.8rem; background: linear-gradient(0deg, #e86559 0%, #c4362b 100%); border-radius: 0.4rem; font-size: 0.3rem; font-family: Source Han Sans CN; font-weight: 400; color: #fffbf6; }

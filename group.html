@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" href="./css/start.css">
+		<link rel="stylesheet" href="./css/group.css">
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/resize.js"></script>
+		<script src="./js/NativeShare.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<img class="back" src="img/youjiantouW@2x.png" onclick="window.history.go(-1)">
+				<img class="zt" src="img/group/zt.png">
+			</header>
+			<div class="content">
+				<img class="js" src="img/group/js.png">
+				<div class="desc">任选一种优惠券组团领取，
+					邀请好友，5人成团得券，人数未满可领取参与奖。
+				</div>
+				<div class="clearfix quan">
+					<div class="fl" :class="{action:action=='1'}">
+						<img v-if="action=='1'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+					<div class="fl" :class="{action:action=='2'}">
+						<img v-if="action=='2'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+					<div class="fl" :class="{action:action=='3'}">
+						<img v-if="action=='3'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+				</div>
+				<div class="group" v-if="step>0">
+					<div v-if="isgroup" class="isgroup">已成团</div>
+					<div class="clearfix">
+						<div class="pro fl">
+							<img src="img/group/peo.png" alt="">
+							<div class="tz">团长</div>
+							<div class="name">**2618</div>
+						</div>
+						<div class="fl">
+							<div class="say">团长说：</div>
+							<div class="con">筒子们呀，都来一起参团吧！</div>
+						</div>
+					</div>
+					<div class="line"></div>
+					<div class="p">组团中，剩余4个名额，3天21小时候结束</div>
+					<div class="list clearfix">
+						<div class="item fl" v-for="(item,i) in list">
+							<img :src="item.src" alt="">
+							<div class="tz">好友</div>
+							<div class="name">{{item.name}}</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" @click="start" v-if="step==0">
+					我来开团
+				</button>
+				<button type="button" @click="invite" v-if="step==1">
+					邀请好友
+				</button>
+				<button type="button" @click="share" v-if="step==2">
+					分享活动给好友
+				</button>				
+			</div>
+			<footer>
+				<img class="gz" src="img/group/gz.png">
+				<div class="desc">1.活动时间：2020年6月1日至2020年6月30日；
+					2.活动期间，每位注册用户通过团长或成员身份可获得1次组团领券；
+					3.当所参与团队人数达到5人后，团队中所有成员将获得组团奖励；
+					4.如所在团队在活动期间组团人数未达到5人，在活动结束后全部成员将获得鼓励奖；
+					5.优惠券适用于任意30天及以上定期出借项目，有效期7天；
+					6.按照优惠券使用规则完成项目出借后，系统将于2小时内将优惠券对应金额入账至您的账户余额内，该金额可继续出借或提现；
+					7.活动结束时间可能因宣传原因临时停止，具体以钱包金额公示为准；
+					8.在法律许可范围内，本活动最终解释权归某某所有。
+				</div>
+			</footer>
+			<div class="overlay" v-if="overlay" @click="overlay=false;dialog=0;console.log(overlay)"></div>
+			<div class="dialog d1" v-if="dialog=='1'">
+				<div class="title">请选择一张团购券</div>
+				<div class="clearfix quan">
+					<div class="fl" :class="{action:action=='1'}">
+						<img v-if="action=='1'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+					<div class="fl" :class="{action:action=='2'}">
+						<img v-if="action=='2'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+					<div class="fl" :class="{action:action=='3'}">
+						<img v-if="action=='3'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+				</div>
+				<div class="dd">活动期间只有1次开团/参团机会</div>
+				<button type="button">分享活动给好友</button>
+			</div>
+			<div class="dialog d2" v-if="dialog=='2'">
+				<div class="title">请选择一张团购券</div>
+				<div class="clearfix quan">
+					<div class="fl" :class="{action:action=='1'}" @click="choose(1)">
+						<img v-if="action=='1'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+					<div class="fl" :class="{action:action=='2'}" @click="choose(2)">
+						<img v-if="action=='2'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+					<div class="fl" :class="{action:action=='3'}" @click="choose(3)">
+						<img v-if="action=='3'" class="right" src="img/group/duihao2.png">
+						<div class="title">优惠券</div>
+						<div class="pp">￥<span id="price">30</span></div>
+						<div class="tou">投资3万返30元</div>
+					</div>
+				</div>
+				<div class="dd">活动期间只有1次开团/参团机会</div>
+				<button type="button" @click="sure">确认开团</button>
+			</div>
+			<div class="dialog d3" v-if="dialog=='3'">
+				<div class="title">开团成功</div>
+				<img class="imgg" src="./img/group/g1.png" >
+				<button type="button" onclick="call('wechatFriend')" @click="step=2;dialog=0;">邀请好友参团</button>
+			</div>
+			<div class="dialog d4" v-if="dialog=='4'">
+				<div class="title">参团成功</div>
+				<img class="imgg" src="./img/group/g2.png" >
+				<button type="button">邀请好友参团</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data: {
+				btn: '我来开团',
+				action: "0",
+				isgroup:true,
+				overlay:false,
+				dialog:0,
+				step:0, //步骤
+				list:[
+					{name:"**2456",src:"img/group/peo.png"},
+					{name:"**2456",src:"img/group/peo.png"},
+					{name:"剩余名额",src:"img/group/peo2.png"},
+					{name:"剩余名额",src:"img/group/peo2.png"},
+				],
+			},
+			methods: {
+				start(){
+					this.overlay=true;
+					this.dialog=2;
+				},
+				choose(n){
+					this.action=n;
+				},
+				sure(){
+					if(this.action==0){
+						alert("请选择一张团购券")
+					}else{
+						this.dialog=3;
+						this.step=1;
+					}
+				},
+				invite(){
+					this.overlay=true;
+					this.dialog=3;
+				},
+				
+
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		var nativeShare = new NativeShare()
+		var shareData = {
+			title: document.title,
+			desc: window.location.href,
+			// 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+			link: window.location.href,
+			// icon: 'https://pic3.zhimg.com/v2-080267af84aa0e97c66d5f12e311c3d6_xl.jpg',
+			// 不要过于依赖以下两个回调，很多浏览器是不支持的
+			success: function() {
+				alert('success')
+			},
+			fail: function() {
+				alert('fail')
+			}
+		}
+		nativeShare.setShareData(shareData)
+		
+		function call(command) {
+			try {
+				if(www()){
+					alert('点击右上角分享')
+				}else{
+					nativeShare.call(command)
+				}
+			} catch (err) {
+				// 如果不支持，你可以在这里做降级处理
+				alert(err.message)
+				console.log(www())
+			}
+		}
+		
+		function setTitle(title) {
+			nativeShare.setShareData({
+				title: title,
+			})
+		}
+		function www(){
+			var ua = window.navigator.userAgent.toLowerCase();
+			if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+				return true; //是微信端
+			} else {
+				return false; //不是微信端
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,299 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #fff;
+	font-size: 0.26rem;
+	font-family: Source Han Sans CN;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+body {
+	width: 100%;
+	/* height: 10.09rem; */
+	background: #FF472A url('../img/bg1.jpg') no-repeat;
+	background-size: 100%;
+	padding: 6.6rem 0 0.78rem 0;
+}
+
+.contant {
+	width: 100%;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.data {
+	width: .8rem;
+	margin: 0 auto 0 .78rem;
+}
+
+.top {
+	width: 7.09rem;
+	height: 2.32rem;
+	display: block;
+	margin: 0 auto 2rem;
+}
+
+.cishu {
+	margin: 0.24rem auto 0.46rem;
+	width: 5.59rem;
+	height: .56rem;
+	line-height: .56rem;
+	background: url('../img/foot.png') no-repeat;
+	background-size: 100%;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+}
+
+.jilu {
+	font-size: 0.3rem;
+	width: 100%;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(255, 240, 113, 1);
+	text-align: center;
+	line-height: .24rem;
+}
+
+.line {
+	width: 2.58rem;
+	height: 0.2rem;
+	background: linear-gradient(90deg, rgba(255, 66, 41, 1) 0%, rgba(255, 240, 113, 1) 48%, rgba(255, 66, 41, 1) 100%);
+	opacity: 0.2;
+	margin: 0 auto 0.31rem;
+}
+
+.table {
+	width: 6.7rem;
+	/* height:4.59rem; */
+	border: 0.02rem solid rgba(255, 240, 113, 1);
+	border-radius: 0.12rem;
+	margin: 0 auto;
+	font-size: 0.23rem;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	color: rgba(255, 240, 113, 1);
+}
+
+.table p {
+	border-bottom: 0.02rem solid rgba(255, 240, 113, 1);
+	line-height: 0.54rem;
+	padding: 0 0.24rem;
+}
+
+.table p:last-child {
+	border-bottom: 0;
+}
+
+.back {
+	width: 0.18rem;
+	height: 0.3rem;
+	position: fixed;
+	top: .4rem;
+	left: 0.23rem;
+	/*transform: rotate(180deg);*/
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.none {
+	display: none;
+}
+
+.jiangpin {
+	width: 5.31rem;
+	height: 4.98rem;
+	margin: 3.6rem auto 0rem;
+	background: url(../img/弹窗.png) no-repeat top center;
+	background-size: 100%;
+	padding-top: 0.43rem;
+}
+
+.jiangpin .title {
+	width: 100%;
+	margin: 0 auto 0;
+	font-size: 0.28rem;
+	text-align: center;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(233, 197, 150, 1);
+}
+
+.jiangpin .img {
+	margin: 0.31rem auto 0.22rem;
+	width: 2.16rem;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	display: block;
+	/* background-image: url(../img/奖品1.png); */
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: contain;
+	font-size:0.24rem;
+	font-family:FZLanTingHei-H-GBK;
+	font-weight:400;
+	color:rgba(255,239,67,1);
+	text-align: center;
+}
+.jiangpin .img span{
+	font-size:0.46rem;
+}
+#goods .gx{
+	font-size:0.4rem;
+	line-height: .7rem;
+	width: 1.8rem;
+	margin-top: .6rem;
+}
+
+.jiangpin .name {
+	font-size: 0.3rem;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(250, 110, 103, 1);
+	text-align: center;
+}
+
+.jiangpin button {
+	width: 4rem;
+	height: 0.86rem;
+	border: none;
+	background: url(../img/button2.png) no-repeat center;
+	background-size: 100%;
+	margin: 0.8rem auto 0;
+	font-size: 0.3rem;
+	font-family: Source Han Sans CN;
+	font-weight: 500;
+	color: rgba(195, 103, 6, 1);
+	display: block;
+
+}
+
+.close {
+	width: 0.61rem;
+	height: 0.61rem;
+	margin: 0 auto;
+	display: block;
+}
+
+.lottery {
+	overflow: hidden;
+	/* width: 6.49rem; */
+	width: 6.59rem;
+	height: 5.03rem;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0.25rem 0.32rem;
+	background-image: url(../img/k8.png);
+	background-color:rgba(253,88,37,1);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.lottery .tablea {
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 6.03rem;
+	height: 4.53rem;
+	background: rgba(217, 15, 5, 1);
+	border-radius: 0.22rem;
+	padding: 0.15rem 0.13rem;
+	box-sizing: border-box;
+}
+
+.lottery .td {
+	text-align: center;
+	background: url(../img/button1.png) no-repeat;
+	background-size: 100%;
+	width: 1.87rem;
+	height: 1.36rem;
+	overflow: hidden;
+	padding: 0.08rem 0;
+	border: 2px solid transparent;
+	box-sizing: border-box;
+}
+.lottery .cjBtn{
+	background: url(../img/ljcj.png) no-repeat;
+	background-size: 100%;
+	font-size:0.33rem;
+	font-family:Source Han Sans CN;
+	font-weight:500;
+	line-height: 1.26rem;
+	color:rgba(255,51,39,1);
+}
+p.name{
+	/* width:70px; */
+	height:0.13rem;
+	line-height:0.13rem;
+	font-size:0.17rem;
+	font-family:Source Han Sans CN;
+	font-weight:400;
+	color:rgba(255,51,39,1);
+}
+p.gx{
+	width:0.99rem;
+	line-height: .5rem;
+	font-size:0.23rem;
+	font-family:Source Han Sans CN;
+	font-weight:500;
+	margin: 0 auto;
+	color:rgba(255,51,39,1);
+	margin-top: 0.1rem;
+}
+.lottery .td .img {
+	width: 1.44rem;
+	height: 0.87rem;
+	line-height: 0.85rem;
+	margin: 0 auto;	
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: contain;
+	font-size:0.16rem;
+	font-family:FZLanTingHei-H-GBK;
+	font-weight:400;
+	color:rgba(255,239,67,1);
+}
+.lottery .td .img span{
+	font-size:0.31rem;
+}
+
+#luck .active {
+	border: 2px solid #FF472A;
+}

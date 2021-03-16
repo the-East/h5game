@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>绽放两年 聚“惠”有你</title>
+		<link rel="stylesheet" href="./css/lottery.css">
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./js/resize.js"></script>
+		<script src="./js/NativeShare.js"></script>
+	</head>
+	<body>
+		<div class="contant">
+			<img class="back" src="img/youjiantouW@2x.png" onclick="back()">
+			<div class="tab flex-end">
+				<img class="join" src="img/join.png" onclick="push()">
+				<div class="share" id="share" onclick="call('wechatFriend')">
+					<p class="add">
+						增加一次
+					</p>
+					<p class="fx">分享</p>
+				</div>
+			</div>
+			<div class="footer">
+				今日您还剩余3次抽奖机会
+			</div>
+		</div>
+		<script type="text/javascript">
+			function push() {
+				window.location.href = "action.html";
+			}
+
+			function back() {
+				window.history.go(-1);
+			}
+			var nativeShare = new NativeShare()
+			var shareData = {
+				title: document.title,
+				desc: window.location.href,
+				// 如果是微信该link的域名必须要在微信后台配置的安全域名之内的。
+				link: window.location.href,
+				// icon: 'https://pic3.zhimg.com/v2-080267af84aa0e97c66d5f12e311c3d6_xl.jpg',
+				// 不要过于依赖以下两个回调，很多浏览器是不支持的
+				success: function() {
+					alert('success')
+				},
+				fail: function() {
+					alert('fail')
+				}
+			}
+			nativeShare.setShareData(shareData)
+
+			function call(command) {
+				try {
+					if(www()){
+						alert('点击右上角分享')
+					}else{
+						nativeShare.call(command)
+					}
+				} catch (err) {
+					// 如果不支持，你可以在这里做降级处理
+					alert(err.message)
+					console.log(www())
+				}
+			}
+
+			function setTitle(title) {
+				nativeShare.setShareData({
+					title: title,
+				})
+			}
+			function www(){
+				var ua = window.navigator.userAgent.toLowerCase();
+				if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+					return true; //是微信端
+				} else {
+					return false; //不是微信端
+				}
+			}
+		</script>
+	</body>
+</html>
